@@ -7,8 +7,8 @@ public class TestMovement : MonoBehaviour
 
 
 
-    public Vector3 pointA = new Vector3(0, 0, 0);
-    public Vector3 pointB = new Vector3(1, 2, 1);
+    public Vector3 pointA = new Vector3(0, 0, 10);
+    public Vector3 pointB = new Vector3(0, 0, 12);
     // Start is called before the first frame update
     void Start()
     {
