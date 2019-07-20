@@ -1,55 +1,73 @@
 fileFormatVersion: 2
-guid: 7a6fdbf12fe8d4d9b81bc1ca40d8ab12
-timeCreated: 1503969907
-licenseType: Pro
+guid: 0bd4320dfab952f4591448604bc89e84
 PluginImporter:
-  serializedVersion: 1
+  externalObjects: {}
+  serializedVersion: 2
   iconMap: {}
   executionOrder: {}
+  defineConstraints: []
   isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
   platformData:
-    Android:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-    Any:
-      enabled: 0
-      settings: {}
-    Editor:
+  - first:
+      Any: 
+    second:
       enabled: 1
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+      enabled: 0
       settings:
         CPU: x86
         DefaultValueInitialized: true
-        OS: Windows
-    Linux:
-      enabled: 0
+  - first:
+      Facebook: Win
+    second:
+      enabled: 1
       settings:
-        CPU: x86
-    Linux64:
+        CPU: AnyCPU
+  - first:
+      Facebook: Win64
+    second:
       enabled: 0
       settings:
         CPU: None
-    LinuxUniversal:
-      enabled: 0
+  - first:
+      Standalone: Linux
+    second:
+      enabled: 1
       settings:
         CPU: x86
-    OSXIntel:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-    OSXIntel64:
+  - first:
+      Standalone: Linux64
+    second:
       enabled: 0
       settings:
         CPU: None
-    OSXUniversal:
+  - first:
+      Standalone: LinuxUniversal
+    second:
+      enabled: 1
+      settings:
+        CPU: x86
+  - first:
+      Standalone: OSXUniversal
+    second:
       enabled: 0
       settings:
         CPU: x86
-    Win:
-      enabled: 0
+  - first:
+      Standalone: Win
+    second:
+      enabled: 1
       settings:
         CPU: AnyCPU
-    Win64:
+  - first:
+      Standalone: Win64
+    second:
       enabled: 0
       settings:
         CPU: None
