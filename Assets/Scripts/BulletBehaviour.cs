@@ -15,7 +15,9 @@ public class BulletBehaviour : MonoBehaviour
   }
   void OnCollisionEnter(Collision collision) 
   {
-    DisableBullet();
+    if(collision.gameObject.tag != "bullet") {
+      DisableBullet();
+    }
   }
 
   void DisableBullet() {
