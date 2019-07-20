@@ -21,5 +21,6 @@ public class BulletBehaviour : MonoBehaviour
   void DisableBullet() {
     bullet.SetActive(false);
     bullet.GetComponent<Rigidbody>().velocity = Vector3.zero;
+    bullet.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
   }
 }
