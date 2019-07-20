@@ -4,22 +4,15 @@ using UnityEngine;
 public class BulletShooter : MonoBehaviour
 {
   public ObjectPooler objectPooler;
+  public GameObject self;
   public float speed = 100f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0) {
           GameObject shootingBullet = objectPooler.GetPooledObject();
-          shootingBullet.SetActive(true);
-          shootingBullet.transform.position = Camera.main.transform.position;
-          shootingBullet.transform.rotation = Camera.main.transform.rotation;
+          shootingBullet.SetActive(true); 
+          shootingBullet.transform.rotation = objectPooler.objectToPool.transform.rotation;
+          shootingBullet.transform.position = objectPooler.objectToPool.transform.position;
           Rigidbody shootingBulletRigidbody = shootingBullet.GetComponent<Rigidbody>();
           
           shootingBulletRigidbody.AddForce(Camera.main.transform.forward * speed);
