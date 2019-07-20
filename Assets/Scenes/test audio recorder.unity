@@ -225,6 +225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe79c566c4d2c554aaddaa4ec41ac783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPooler: {fileID: 0}
+  self: {fileID: 0}
+  speed: 100
   sensitivity: 40
   timeoutFrames: 3
 --- !u!1 &1388689908
