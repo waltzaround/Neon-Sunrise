@@ -13,10 +13,14 @@ public class EnemyDeath : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "bullet")
-
+        if (collision.gameObject.tag == "bullet") {
+          Debug.Log(collision.gameObject.name);
+            if(collision.gameObject.name.StartsWith("ChainLaser")) {
+              GlobalVariables.score += 11;
+            } else {
+              GlobalVariables.score += 5;
+            }
             gameObject.SetActive(false);
-            GlobalVariables.score += 5;
         }
     }
 }
