@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour
 {
-
     public GameObject explosion;
     public Vector3 explosionOffset;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class EnemyDeath : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "bullet")
+
         {
             if (explosion != null)
             {
@@ -26,8 +27,6 @@ public class EnemyDeath : MonoBehaviour
                 //explosionFX.Play();
                 Destroy(explosionFX, 5);
             }
-
-            print("Instantiated explosion");
             
             gameObject.SetActive(false);
             GlobalVariables.score += 5;
