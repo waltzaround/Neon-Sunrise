@@ -10,11 +10,12 @@ public class EnemyDeath : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "bullet")
         {
             gameObject.SetActive(false);
+            GlobalVariables.score += 5;
         }
     }
 }
