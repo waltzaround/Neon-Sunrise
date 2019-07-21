@@ -198,8 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPooler: {fileID: 9782244}
   self: {fileID: 9782242}
-  speed: 100
-  sensitivity: 40
+  speed: 400
+  sensitivity: 20
   timeoutFrames: 3
 --- !u!1001 &88080775
 PrefabInstance:
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   objectToPool: {fileID: 480379606}
   poolSize: 50
   pooledObjects: []
-  willGrow: 0
+  willGrow: 1
 --- !u!114 &1885167865
 MonoBehaviour:
   m_ObjectHideFlags: 0
