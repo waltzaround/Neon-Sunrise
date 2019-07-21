@@ -12,11 +12,9 @@ public class EnemyDeath : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit by laser");
         if (collision.gameObject.tag == "bullet")
         {
             gameObject.SetActive(false);
-            Debug.Log("Sucessfully triggered");
         }
     }
 }
