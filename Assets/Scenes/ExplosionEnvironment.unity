@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPooler: {fileID: 9782244}
   self: {fileID: 9782242}
-  speed: 100
+  speed: 400
   sensitivity: 40
   timeoutFrames: 3
 --- !u!1001 &88080775
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 171051792}
   - component: {fileID: 171051791}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: ParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +415,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -590,8 +590,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.33480322, b: 0, a: 1}
-      maxColor: {r: 1, g: 0.7045657, b: 0.042452812, a: 1}
+      minColor: {r: 1, g: 0.33480322, b: 0, a: 0.3372549}
+      maxColor: {r: 1, g: 0.7045657, b: 0.042452812, a: 0.3764706}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -969,7 +969,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -5286,6 +5286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dc3feaa0f5f89459f95623de452d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 171051789}
+  explosionOffset: {x: 0, y: 0, z: 0}
 --- !u!135 &480379610
 SphereCollider:
   m_ObjectHideFlags: 0
