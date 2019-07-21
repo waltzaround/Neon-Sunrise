@@ -18,9 +18,10 @@ public class CountdownTimer : MonoBehaviour
             Time.timeScale = 0.0f;
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             // Time.timeScale = 1.0f;
-           if (Input.touchCount > 0 ){
+           if (Input.touchCount > 0  || Input.GetKeyDown(KeyCode.Space)){
                Time.timeScale = 1.0f;
                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+               GlobalVariables.score = 0;
            }
         }
     }
