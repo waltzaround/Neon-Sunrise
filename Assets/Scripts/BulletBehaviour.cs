@@ -7,6 +7,10 @@ public class BulletBehaviour : MonoBehaviour
   public GameObject bullet;
 
   public float disableBulletDistance;
+  public float disableBulletTime;
+  void Start() {
+    Invoke("DisableBullet", disableBulletTime);
+  }
   void Update() {
     float distanceFromCamera = Vector3.Distance(bullet.transform.position, Camera.main.transform.position);
     if(distanceFromCamera > disableBulletDistance) {

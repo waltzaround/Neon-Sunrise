@@ -14,9 +14,8 @@ public class EnemyDeath : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Hit by laser");
         if (collision.gameObject.tag == "bullet")
         {
             if (explosion != null)
@@ -31,7 +30,7 @@ public class EnemyDeath : MonoBehaviour
             print("Instantiated explosion");
             
             gameObject.SetActive(false);
-            //Debug.Log("Sucessfully triggered");
+            GlobalVariables.score += 5;
         }
     }
 }
