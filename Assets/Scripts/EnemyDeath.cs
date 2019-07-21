@@ -6,7 +6,7 @@ public class EnemyDeath : MonoBehaviour
 {
     public GameObject explosion;
     public Vector3 explosionOffset;
-
+    public AudioSource aSource;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,7 @@ public class EnemyDeath : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
 
         {
+
             if (explosion != null)
             {
                 print("Instantiating explosion");
@@ -27,7 +28,7 @@ public class EnemyDeath : MonoBehaviour
                 //explosionFX.Play();
                 Destroy(explosionFX, 5);
             }
-            
+            aSource.Play();
             gameObject.SetActive(false);
             GlobalVariables.score += 5;
         }
