@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float timeLeft = 120.0f;
+    public static float timeLeft = 120.0f;
     public GameObject textMesh;
 
     // Update is called once per frame

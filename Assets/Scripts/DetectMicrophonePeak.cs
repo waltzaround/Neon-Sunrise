@@ -71,6 +71,7 @@ public class DetectMicrophonePeak : MonoBehaviour
 
             if (level > sensitivity / 100)
             {
+                if (CountdownTimer.timeLeft > 0) { 
                 GameObject shootingBullet = objectPooler.GetPooledObject();
                 shootingBullet.SetActive(true);
                 shootingBullet.transform.rotation = objectPooler.objectToPool.transform.rotation;
@@ -80,6 +81,7 @@ public class DetectMicrophonePeak : MonoBehaviour
                 shootingBulletRigidbody.AddForce(Camera.main.transform.forward * speed);
                 // Don't shoot again until the TimeoutFrameCounter is reaced.
                 TimeoutFramecounter = 1;
+                }
             }
 
         // Increment to continue the timeout
