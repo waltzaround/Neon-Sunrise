@@ -1263,7 +1263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   congratulations: {fileID: 1664285899}
-  timeLeft: 120
 --- !u!114 &1168722680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,7 +1543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f079d1bda5cc2409da02e4d38f0759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 120
+  timeLeft: 90
   textMesh: {fileID: 431442264}
 --- !u!114 &1537244847
 MonoBehaviour:

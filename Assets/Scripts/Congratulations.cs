@@ -6,23 +6,46 @@ using UnityEngine.UI;
 public class Congratulations : MonoBehaviour
 {
     public GameObject congratulations;
-    public float timeLeft = 120.0f;
+    //public float timeLeft = 120.0f;
+
+    // grab time from countdown timer
+    GameObject theTime;
+
+    private bool gameRunning = false;
     // Start is called before the first frame update
     void Start()
     {
-        congratulations.SetActive(false);
+        // Freeze the game as soon as it starts and display the welcome text
+        Time.timeScale = 0.0f;
+        congratulations.GetComponent<Text>().text = "Welcome to PewPewVR!\n Touch the headset button or tap and start making pew pew noises to play.";
+        congratulations.SetActive(true);
+
+        theTime = GameObject.Find("model");
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0)
+        if (gameRunning)
         {
-            congratulations.SetActive(true);
-           if (Input.touchCount > 0 ){
-               congratulations.SetActive(false);
-           }
+            CountdownTimer countdownTimer = theTime.GetComponent<CountdownTimer>();
+            if (countdownTimer.timeLeft <= 0)
+            {
+                congratulations.GetComponent<Text>().text = "Game Over!\n Final Score: " + GlobalVariables.score.ToString() + "\nTouch the VR button to restart.";
+                congratulations.SetActive(true);
+                if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
+                {
+                    congratulations.SetActive(false);
+                }
+            }
+        } else
+        {
+            if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
+            {
+                Time.timeScale = 1.0f;
+                gameRunning = true;
+                congratulations.SetActive(false);
+            }
         }
     }
 }
