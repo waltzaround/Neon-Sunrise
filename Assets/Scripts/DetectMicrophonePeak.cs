@@ -17,15 +17,23 @@ public class DetectMicrophonePeak : MonoBehaviour
     // How many frames to wait before shooting again
     public int timeoutFrames;
 
+    // grab time from countdown timer
+    GameObject theTime;
+
     // Only needed for demo movement of pill
     string lastMoved;
+
     // Keeps track of how many frames have passed since we last shot
     int TimeoutFramecounter;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        theTime = GameObject.Find("model");
+        Debug.Log(theTime);
+
+
         // lastMoved is only needed for the demo pill
         lastMoved = "left";
 
@@ -40,6 +48,7 @@ public class DetectMicrophonePeak : MonoBehaviour
         {
             microphoneInput = Microphone.Start(Microphone.devices[0], true, 999, 44100);
             microphoneInitialized = true;
+           
         }
     }
 
@@ -71,7 +80,8 @@ public class DetectMicrophonePeak : MonoBehaviour
 
             if (level > sensitivity / 100)
             {
-                if (CountdownTimer.timeLeft > 0) { 
+                CountdownTimer countdownTimer = theTime.GetComponent<CountdownTimer>();
+                if (countdownTimer.timeLeft > 0) { 
                 GameObject shootingBullet = objectPooler.GetPooledObject();
                 shootingBullet.SetActive(true);
                 shootingBullet.transform.rotation = objectPooler.objectToPool.transform.rotation;
