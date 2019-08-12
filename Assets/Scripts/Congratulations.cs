@@ -11,11 +11,12 @@ public class Congratulations : MonoBehaviour
     // grab time from countdown timer
     GameObject theTime;
 
-    private bool gameRunning = false;
+    public bool gameRunning;
     // Start is called before the first frame update
     void Start()
     {
         // Freeze the game as soon as it starts and display the welcome text
+        gameRunning = false;
         Time.timeScale = 0.0f;
         congratulations.GetComponent<Text>().text = "Welcome to PewPewVR!\n Touch the headset button or tap and start making pew pew noises to play.";
         congratulations.SetActive(true);

@@ -19,6 +19,7 @@ public class DetectMicrophonePeak : MonoBehaviour
 
     // grab time from countdown timer
     GameObject theTime;
+    GameObject runner;
 
     // Only needed for demo movement of pill
     string lastMoved;
@@ -31,6 +32,7 @@ public class DetectMicrophonePeak : MonoBehaviour
     {
 
         theTime = GameObject.Find("model");
+        runner = GameObject.Find("Canvas");
         Debug.Log(theTime);
 
 
@@ -81,7 +83,9 @@ public class DetectMicrophonePeak : MonoBehaviour
             if (level > sensitivity / 100)
             {
                 CountdownTimer countdownTimer = theTime.GetComponent<CountdownTimer>();
-                if (countdownTimer.timeLeft > 0) { 
+                Congratulations congrats = runner.GetComponent<Congratulations>();
+                Debug.Log(congrats.gameRunning);
+                if (countdownTimer.timeLeft > 0 && congrats.gameRunning) { 
                 GameObject shootingBullet = objectPooler.GetPooledObject();
                 shootingBullet.SetActive(true);
                 shootingBullet.transform.rotation = objectPooler.objectToPool.transform.rotation;
